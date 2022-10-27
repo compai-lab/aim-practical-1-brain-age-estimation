@@ -87,10 +87,7 @@ def load_nii(path: str, dtype: str = 'float32') -> np.ndarray:
     :param dtype: Target dtype
     :return img: Loaded image. Shape (H, W, D)
     """
-    # ------------------------- ADD YOUR CODE HERE ----------------------------
-    img = None
-    # --------------------------------- END -----------------------------------
-    return img
+    return nib.load(path).get_fdata().astype(np.dtype(dtype))
 
 
 def preprocess(img: np.ndarray, mask: np.ndarray, img_size: int) -> np.ndarray:
